@@ -28,7 +28,7 @@ case 'valideConnexion':
     $mdp = filter_input(INPUT_POST, 'mdp', FILTER_SANITIZE_STRING);
     $visiteur = $pdo->getInfosVisiteur($login, $mdp);
     if (!is_array($visiteur)) {
-        //(myself)
+        /*(myself)
         // Si ce n'est un visiteur , on essaye en tant que comptable
         $comptable = $pdo->getInfosComptable($login, $mdp);
         if (!is_array($comptable)){
@@ -43,6 +43,7 @@ case 'valideConnexion':
             header('Location: index.php');
         }
         //fin(myself)
+        */
     } else {
         $id = $visiteur['id'];
         $nom = $visiteur['nom'];
