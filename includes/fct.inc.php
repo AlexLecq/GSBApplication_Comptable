@@ -14,6 +14,7 @@
  * @link      http://www.php.net/manual/fr/book.pdo.php PHP Data Objects sur php.net
  */
 
+
 /**
  * Teste si un quelconque visiteur est connecté
  *

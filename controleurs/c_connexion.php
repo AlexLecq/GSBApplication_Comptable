@@ -28,7 +28,7 @@ case 'valideConnexion':
     $mdp = filter_input(INPUT_POST, 'mdp', FILTER_SANITIZE_STRING);
     $visiteur = $pdo->getInfosVisiteur($login, $mdp);
     if (!is_array($visiteur)) {
-        /*(myself)
+        //(myself)
         // Si ce n'est un visiteur , on essaye en tant que comptable
         $comptable = $pdo->getInfosComptable($login, $mdp);
         if (!is_array($comptable)){
@@ -36,15 +36,16 @@ case 'valideConnexion':
             include 'vues/v_erreurs.php';
             include 'vues/v_connexion.php';
         }else{
+            $_SESSION["isComptable"] = true; 
             $id = $comptable['id'];
-            $nom = $visiteur['nom'];
-            $prenom = $visiteur['prenom'];
+            $nom = $comptable['nom'];
+            $prenom = $comptable['prenom'];
             connecter($id, $nom,$prenom);
             header('Location: index.php');
         }
         //fin(myself)
-        */
     } else {
+        $_SESSION["isComptable"] = false;
         $id = $visiteur['id'];
         $nom = $visiteur['nom'];
         $prenom = $visiteur['prenom'];
