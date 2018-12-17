@@ -41,16 +41,15 @@ case 'valideConnexion':
             $nom = $comptable['nom'];
             $prenom = $comptable['prenom'];
             connecter($id, $nom,$prenom);
-            header('Location: index.php');
+            header('Location: http://localhost/index.php');
         }
         //fin(myself)
     } else {
-        $_SESSION["isComptable"] = false;
         $id = $visiteur['id'];
         $nom = $visiteur['nom'];
         $prenom = $visiteur['prenom'];
         connecter($id, $nom, $prenom);
-        header('Location: index.php');
+        header('Location: http://localhost/index.php');
     }
     break;
 default:

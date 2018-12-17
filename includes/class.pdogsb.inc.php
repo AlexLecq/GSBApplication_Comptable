@@ -510,4 +510,29 @@ class PdoGsb
         $requetePrepare->bindParam(':unMois', $mois, PDO::PARAM_STR);
         $requetePrepare->execute();
     }
+
+    
+    /**
+     * Permet la récupération de la liste des visiteurs pour le comptable
+     *
+     * @return  liste des Visiteurs
+     */
+    public function getListeVisiteur()
+    {
+        $req = self::$monPdo->query(
+                'SELECT visiteur.id , visiteur.nom , visiteur.prenom FROM visiteur'
+        );
+
+        $result = $req->fetchAll();
+
+        $listeVisiteur = array();
+
+
+        foreach($result as $key => $value){
+            $listeVisiteur[$key] = $value;
+        }
+        return $listeVisiteur;
+        
+    }
+
 }

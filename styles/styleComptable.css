@@ -1,0 +1,21 @@
+.header {
+    margin-top: 10px;
+}
+
+a{
+    color: #ce9a0c;
+}
+
+a:hover{
+    color: #ce9a0c;
+}
+
+.nav-pills > li.active > a{
+    color: #d6d0bf;
+    background-color: black;
+}
+
+.panel-orange > .panel-heading{
+    background-color: #ce9a0c;
+    border-color: #ce9a0c;
+}

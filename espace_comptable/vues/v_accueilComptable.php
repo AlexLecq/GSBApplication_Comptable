@@ -36,11 +36,11 @@
                         <a href="index.php?uc=validerFrais&action=choixVisiteur"
                            class="btn btn-success btn-lg" role="button">
                             <span class="glyphicon glyphicon-pencil"></span>
-                            <br>Renseigner la fiche de frais</a>
-                        <a href="index.php?uc=etatFrais&action=selectionnerMois"
+                            <br>Valider une fiche de frais</a>
+                        <a href="index.php?uc=suiviPaiment&action="
                            class="btn btn-primary btn-lg" role="button">
                             <span class="glyphicon glyphicon-list-alt"></span>
-                            <br>Afficher mes fiches de frais</a>
+                            <br>Suivi des paiments des fiches de frais</a>
                     </div>
                 </div>
             </div>

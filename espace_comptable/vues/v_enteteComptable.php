@@ -24,7 +24,7 @@
         <meta name="author" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="./styles/bootstrap/bootstrap.css" rel="stylesheet">
-        <link href="styles/style.css" rel="stylesheet">
+        <link href="./styles/styleComptable.css" rel="stylesheet">
     </head>
     <body>
         <div class="container">
@@ -43,22 +43,22 @@
                     </div>
                     <div class="col-md-8">
                         <ul class="nav nav-pills pull-right" role="tablist">
-                            <li <?php if (!$uc || $uc == 'accueil') { ?>class="active" <?php } ?>>
+                            <li <?php if (!$uc || $uc == 'accueilComptable') { ?>class="active" <?php } ?>>
                                 <a href="index.php">
                                     <span class="glyphicon glyphicon-home"></span>
                                     Accueil
                                 </a>
                             </li>
-                            <li <?php if ($uc == 'gererFrais') { ?>class="active"<?php } ?>>
-                                <a href="index.php?uc=gererFrais&action=saisirFrais">
+                            <li <?php if ($uc == 'validerFrais') { ?>class="active"<?php } ?>>
+                                <a href="index.php?uc=validerFrais&action=choixVisiteur">
                                     <span class="glyphicon glyphicon-pencil"></span>
-                                    Renseigner la fiche de frais
+                                    Valider une fiche de frais
                                 </a>
                             </li>
-                            <li <?php if ($uc == 'etatFrais') { ?>class="active"<?php } ?>>
-                                <a href="index.php?uc=etatFrais&action=selectionnerMois">
+                            <li <?php if ($uc == 'suiviPaiment') { ?>class="active"<?php } ?>>
+                                <a href="index.php?uc=suiviPaiment&action=selectionnerMois">
                                     <span class="glyphicon glyphicon-list-alt"></span>
-                                    Afficher mes fiches de frais
+                                    Suivi des paiments des fiches de frais
                                 </a>
                             </li>
                             <li 
