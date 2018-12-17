@@ -524,9 +524,7 @@ class PdoGsb
         );
 
         $result = $req->fetchAll();
-
         $listeVisiteur = array();
-
 
         foreach($result as $key => $value){
             $listeVisiteur[$key] = $value;
@@ -534,5 +532,7 @@ class PdoGsb
         return $listeVisiteur;
         
     }
+
+    
 
 }
