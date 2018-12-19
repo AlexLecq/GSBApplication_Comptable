@@ -7,19 +7,24 @@ a{
 }
 
 a:hover{
-    color: #ce9a0c;
+    color: #f90;
+}
+h2{
+    color:#f90;
 }
 
 .nav-pills > li.active > a{
     color: #d6d0bf;
-    background-color: black;
+    background-color: #f90;
 }
 
-.panel-orange > .panel-heading{
-    background-color: #ce9a0c;
-    border-color: #ce9a0c;
-}
-
-{
+.panel-info{
+    border-color:#f90;
     margin: 20px 0;
+}
+
+.panel-info > .panel-heading{
+    color: white;
+    background-color: #f90;
+    border-color:#f90;
 }

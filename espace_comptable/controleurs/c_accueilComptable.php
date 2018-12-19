@@ -16,5 +16,5 @@
 if ($estConnecte) {
     include 'espace_comptable/vues/v_accueilComptable.php';
 } else {
-    include 'espace_comptable/vues/v_connexion.php';
+    include 'vues/v_connexion.php';
 }

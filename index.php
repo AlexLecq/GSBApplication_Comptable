@@ -13,7 +13,6 @@
  * @version   GIT: <0>
  * @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
  */
-
 require_once 'includes/fct.inc.php';
 require_once 'includes/class.pdogsb.inc.php';
 session_start();
@@ -54,6 +53,5 @@ if(!isComptable()){
 }else{
     require 'espace_comptable/comptable.php';
 }
-    
-
 require 'vues/v_pied.php';
+?>

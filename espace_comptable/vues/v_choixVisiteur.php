@@ -32,8 +32,10 @@
                 <select class="form-control" name="lstMois" id="lstMois">
                         <?php 
                             
+                                ?><option id="optMois" selected value=<?php echo $mois ?>> <?php echo $numMois .'/'.$numAnnee ?> </option><?php
+                            
                         ?>
-                         <option selected value="<?php echo $mois; ?>"><?php echo $numMois.'/'.$numAnnee; ?></option>
+                         
                 </select>
             </div>
             <input class="btn btn-success" type="submit" value="Valider">

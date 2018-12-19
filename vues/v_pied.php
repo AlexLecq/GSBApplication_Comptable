@@ -15,6 +15,7 @@
  */
 ?>
         </div>
+        <script src="scriptjs/s_lstmoisDynamique.js"></script>
     </body>
 </html>
 
