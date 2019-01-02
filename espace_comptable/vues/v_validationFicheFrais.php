@@ -11,6 +11,6 @@
 <div id="corrigerFraisForfait">
         <form action="index.php?uc=validerFrais&action=validationFicheFrais" method="post" role="form">
             <button class="btn btn-success" type="submit">Valider</button>
+            <button class="btn btn-danger" > Réinitialiser</button>
         </form>
-    
 </div>

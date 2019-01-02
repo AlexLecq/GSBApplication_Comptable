@@ -27,6 +27,7 @@
             
             </div>
             <button class="btn btn-success" type="submit">Corriger</button>
+            <button class="btn btn-danger" > Réinitialiser</button>
         </form>
     </div>
     

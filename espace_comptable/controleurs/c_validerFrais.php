@@ -43,11 +43,17 @@
                 ajouterErreur("Une erreur est survenue lors de la modication, voici le message d'erreur : ".$e->getMessage().""); 
                 include 'vues/v_erreur.php'; 
         }
-        header("Location: http://localhost/index.php?uc=validerFrais&action=afficherFrais");
         break;
     case 'validationFicheFrais':
+        $etat = 'VA';
+        try{
+            $pdo->majEtatFicheFrais($_SESSION['lstVisiteur'] , $_SESSION['lstMois'], $etat);
+        }catch(Exception $e){
+            ajouterErreur($e->getMessage());
+            include 'vues/v_erreurs.php';
+        }
+        
 
-        $pdo->majEtatFicheFrais($_SESSION['lstVisiteur'] , $_SESSION['lstMois'], $etat);
         break;
  }
  ?>

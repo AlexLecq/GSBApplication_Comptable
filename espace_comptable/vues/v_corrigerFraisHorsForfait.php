@@ -31,7 +31,8 @@
                     <td> <input class="form-control" type="text" name="dateHorsForfait" id="dateHorsForfait" value="<?php echo $date ?>"> </td>
                     <td> <input class="form-control" type="text" name="libelleHorsForfait" id="libelleHorsForfait" value="<?php echo $libelle ?>"> </td>
                     <td> <input class="form-control" type="text" name="montantHorsForfait" id="montantHorsForfait" value="<?php echo $montant ?>"></td>
-                    <td> <button class="btn btn-success" href="index.php?uc=validerFrais&action=corrigerFrais&idFrais=<?php echo $id ?>">Corriger</button></td>
+                    <td> <button class="btn btn-success" href="index.php?uc=validerFrais&action=corrigerFrais&idFrais=<?php echo $id ?>">Corriger</button>
+                         <button class="btn btn-danger" > Réinitialiser</button></td>
                 </tr>
                 <?php
             }
