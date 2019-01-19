@@ -3,7 +3,7 @@
 /**
  * Vue : bouton permettant la validation des frais 
  * @author Alexandre Leclercq
- * @version 1.0.0 GIT <GSBApplication>
+ * @version 0 GIT <GSBApplication>
  */
 
 ?>
