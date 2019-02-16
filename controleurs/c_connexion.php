@@ -41,7 +41,7 @@ case 'valideConnexion':
             $nom = $comptable['nom'];
             $prenom = $comptable['prenom'];
             connecter($id, $nom,$prenom);
-            header('Location: http://localhost/index.php?uc=accueil');
+            redirectTo();
         }
         //fin(myself)
     } else {
@@ -49,7 +49,7 @@ case 'valideConnexion':
         $nom = $visiteur['nom'];
         $prenom = $visiteur['prenom'];
         connecter($id, $nom, $prenom);
-        header('Location: http://localhost/index.php?uc=accueil');
+        redirectTo();
     }
     break;
 default:

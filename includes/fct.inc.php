@@ -246,6 +246,34 @@ function ajouterErreur($msg)
 }
 
 /**
+ * Ajoute le libellé d'un message au tableau des messages
+ *
+ * @param String $msg Libellé du message 
+ *
+ * @return null
+ */
+function ajouterMessage($msg)
+{
+    if (!isset($_REQUEST['message'])) {
+        $_REQUEST['message'] = array();
+    }
+    $_REQUEST['message'][] = $msg;
+}
+
+/**
+ * Permet la redirection entre les pages PHP
+ */
+function redirectTo($uc = null, $action = null , $time = 0){
+    if(empty($uc) && empty($action)){
+        echo "<script type='text/javascript'> setTimeout(function () { window.location.href = 'http://localhost/index.php?'; }, ".$time.");</script>";
+    }else if(!empty($uc)) {
+        echo "<script type='text/javascript'> document.location.href = 'http://localhost/index.php?uc=".$uc."';</script>";
+    }else if(!empty($uc) && !empty($action)){
+        echo "<script type='text/javascript'> document.location.href = 'http://localhost/index.php?uc=".$uc."&action=".$action."';</script>";
+    }
+    
+}
+/**
  * Retoune le nombre de lignes du tableau des erreurs
  *
  * @return Integer le nombre d'erreurs

@@ -21,7 +21,6 @@
 
     case 'choixDate':
         $lstVisiteur = $pdo->getListeVisiteur(); 
-        
         include 'espace_comptable/vues/v_choixVisiteur.php';
         break;
     
@@ -52,6 +51,9 @@
         }
         try{
             $pdo->majFraisForfait($_SESSION['unVisiteur'] , $_SESSION['unMois'] , $lesFrais);
+            redirectTo("validerFrais" , "afficherFrais");
+            ajouterMessage("Vos modifications ont été prises en compte");
+            include 'espace_comptable/vues/v_message.php';
         }catch(Exception $e){
                 ajouterErreur("Une erreur est survenue lors de la modication, voici le message d'erreur : ".$e->getMessage().""); 
                 include 'vues/v_erreur.php'; 
