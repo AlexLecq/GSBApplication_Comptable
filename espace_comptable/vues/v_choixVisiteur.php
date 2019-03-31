@@ -17,13 +17,13 @@
             <form action="index.php?uc=validerFrais&action=choixVisiteur" method="post">
             <div class="form-group">
                 <label for="unVisiteur"> Visiteur :<?php ?></label>
-                <select class="form-control" onchange="if(this.value != 0){ var select = this.value; this.form.submit();}" name="unVisiteur" id="lstVisiteur">
+                <select class="form-control" onchange="if(this.value != 0){this.form.submit();}" name="unVisiteur" id="lstVisiteur">
                     <?php 
                         for($i = 0 ; $i < sizeof($lstVisiteur) ; $i++){
                             if($i == 0){
-                                ?><option  selected value="<?php echo $lstVisiteur[$i]["id"] ?> "> <?php echo $lstVisiteur[$i]['nom'] .' '. $lstVisiteur[$i]['prenom'] ?></option> <?php
+                                ?><option  selected value="<?php echo $lstVisiteur[$i]["id"] ?> " name="<?php echo $lstVisiteur[$i]['nom'] .' '. $lstVisiteur[$i]['prenom'] ?>"> <?php echo $lstVisiteur[$i]['nom'] .' '. $lstVisiteur[$i]['prenom'] ?></option> <?php
                             }else{
-                              ?><option  value="<?php echo $lstVisiteur[$i]["id"] ?> "> <?php echo $lstVisiteur[$i]['nom'] .' '. $lstVisiteur[$i]['prenom'] ?></option> <?php 
+                              ?><option  value="<?php echo $lstVisiteur[$i]["id"] ?> " name="<?php echo $lstVisiteur[$i]['nom'] .' '. $lstVisiteur[$i]['prenom'] ?>"> <?php echo $lstVisiteur[$i]['nom'] .' '. $lstVisiteur[$i]['prenom'] ?></option> <?php 
                             }
                         }
                     ?>

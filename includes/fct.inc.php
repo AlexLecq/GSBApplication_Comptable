@@ -91,6 +91,30 @@ function dateAnglaisVersFrancais($maDate)
 }
 
 /**
+ * Permet d'obtenir le mois suivante à la date passé en paramètre
+ * 
+ * @param mois Date sous format aaaamm
+ * 
+ * @return Date Nouvelle Date 
+ */
+function dateSuivante($mois){
+    $leMois = substr($mois , 4 , 2);
+    $leAnnee = substr($mois, 0, 4);
+    if($leMois == '12'){
+        $leMois = '01';
+        intval($leAnnee++);
+    }else{
+        intval($leMois++);
+        if($leMois < 10){
+            $leMois = '0'.strval($leMois);
+        }
+    }
+    $leAnnee = strval($leAnnee);
+    $leMois = strval($leMois);
+    return $leAnnee.$leMois;
+}
+
+/**
  * Retourne le mois au format aaaamm selon le jour dans le mois
  *
  * @param String $date au format  jj/mm/aaaa
@@ -262,14 +286,21 @@ function ajouterMessage($msg)
 
 /**
  * Permet la redirection entre les pages PHP
+ * 
+ * @param UC  Controleur concernée
+ * @param Action  Vers quelle action veut-on être redirigé ?
+ * @param Time Le temps de la redirection  en milliseconde
  */
 function redirectTo($uc = null, $action = null , $time = 0){
-    if(empty($uc) && empty($action)){
+    if(empty($uc) && empty($action))
+    {
         echo "<script type='text/javascript'> setTimeout(function () { window.location.href = 'http://localhost/index.php?'; }, ".$time.");</script>";
-    }else if(!empty($uc)) {
-        echo "<script type='text/javascript'> document.location.href = 'http://localhost/index.php?uc=".$uc."';</script>";
-    }else if(!empty($uc) && !empty($action)){
-        echo "<script type='text/javascript'> document.location.href = 'http://localhost/index.php?uc=".$uc."&action=".$action."';</script>";
+    }else if(!empty($uc) && !empty($action))
+    {
+        echo "<script type='text/javascript'> setTimeout(function () { window.location.href = 'http://localhost/index.php?uc=".$uc."&action=".$action."' ;}, ".$time.");</script>";
+    }else if(!empty($uc)) 
+    {
+        echo "<script type='text/javascript'> setTimeout(function () { window.location.href = 'http://localhost/index.php?uc=".$uc."'; }, ".$time.");</script>";
     }
     
 }

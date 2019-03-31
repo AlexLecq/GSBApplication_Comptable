@@ -27,6 +27,7 @@ case 'valideConnexion':
     $login = filter_input(INPUT_POST, 'login', FILTER_SANITIZE_STRING);
     $mdp = filter_input(INPUT_POST, 'mdp', FILTER_SANITIZE_STRING);
     $visiteur = $pdo->getInfosVisiteur($login, $mdp);
+    $_SESSION["getConnection"] = $visiteur;
     if (!is_array($visiteur)) {
         //(myself)
         // Si ce n'est un visiteur , on essaye en tant que comptable

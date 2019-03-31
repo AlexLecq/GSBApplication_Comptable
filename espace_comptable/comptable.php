@@ -21,6 +21,9 @@ if ($uc && !$estConnecte) {
         case 'validerFrais':
             include 'espace_comptable/controleurs/c_validerFrais.php';
             break;
+        case 'suiviPaiement':
+            include 'espace_comptable/controleurs/c_suiviPaiement.php';
+            break;
         case 'deconnexion':
             include 'controleurs/c_deconnexion.php';
             break;

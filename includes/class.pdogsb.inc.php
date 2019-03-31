@@ -257,6 +257,35 @@ class PdoGsb
     }
 
     /**
+     * Permet de mettre à jour le libellé d'un frais hors forfait en ajoutant "REFUSER : "
+     * 
+     * @param idFrais id de la ligne de frais hors forfait à modifier
+     */
+    public function majLibelleFraisHorsForfait($idFrais)
+    {
+        $query = self::$monPdo->prepare(
+            'SELECT libelle '
+            .'FROM lignefraishorsforfait '
+            .'WHERE id = :idFrais '
+        );
+        $query->bindParam(':idFrais' , $idFrais, PDO::PARAM_STR);
+        $query->execute();
+        $result = $query->fetchAll();
+
+        if(!empty($result) && strlen($result[0]["libelle"]) >= 7){
+            if(substr($result[0]["libelle"] , 0,7) != 'REFUSER'){
+                $query = self::$monPdo->prepare(
+                    'UPDATE lignefraishorsforfait '
+                    .'SET libelle = CONCAT("REFUSER : ", libelle)'
+                    .'WHERE id = :idFrais '
+                );
+                $query->bindParam(':idFrais' , $idFrais , PDO::PARAM_STR);
+                $query->execute();
+            }
+        }
+    }
+
+    /**
      * Met à jour le nombre de justificatifs de la table ficheFrais
      * pour le mois et le visiteur concerné
      *
@@ -458,6 +487,31 @@ class PdoGsb
     }
 
     /**
+     * Retourne toutes les fiches validées
+     * 
+     * @return TABLEAU fiches
+     */
+    public function getFicheValide()
+    {
+        $requetePrepare = PdoGSB::$monPdo->prepare(
+           'SELECT visiteur.nom, visiteur.prenom ,fichefrais.idvisiteur ,fichefrais.mois ,fichefrais.idetat as idEtat, fichefrais.datemodif as dateModif, fichefrais.nbjustificatifs as nbJustificatifs, fichefrais.montantvalide as montantValide, etat.libelle as libEtat '
+            .'FROM fichefrais '
+            .'INNER JOIN visiteur ON fichefrais.idvisiteur = visiteur.id '
+            .'INNER JOIN etat ON fichefrais.idetat = etat.id '
+            .'WHERE fichefrais.idetat = "VA" ' );
+        $requetePrepare->execute();
+        $result = $requetePrepare->fetchAll();
+        $listFiche = array();
+
+        foreach($result as $key => $value){
+            $listFiche[$key] = $value;
+        }
+        
+        return $listFiche;
+
+    }
+
+    /**
      * Retourne les informations d'une fiche de frais d'un visiteur pour un
      * mois donné
      *
@@ -533,6 +587,25 @@ class PdoGsb
         
     }
 
-    
+    /**
+     * Permet de récupérer les informations d'un visiteur
+     * 
+     * @param idVisiteur l'id du visiteur 
+     * 
+     * @return Result informations du visiteur 
+     */
+    public function getUnVisiteur($idVisiteur)
+    {
+        $query = self::$monPdo->prepare(
+            'SELECT visiteur.nom , visiteur.prenom '
+            .'FROM visiteur '
+            .'WHERE visiteur.id = :idVisiteur '
+        );
+        $query->bindParam(':idVisiteur', $idVisiteur, PDO::PARAM_STR);
+        $query->execute();
+        $result = $query->fetchAll();
+
+        return $result;
+    }
 
 }

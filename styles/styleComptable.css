@@ -2,6 +2,7 @@ body{
     margin: 3%;
 }
 
+
 .header {
     margin-top: 10px;
 }
@@ -16,6 +17,7 @@ a:hover{
 h2{
     color:#f90;
 }
+
 
 .nav-pills > li.active > a{
     color: #d6d0bf;

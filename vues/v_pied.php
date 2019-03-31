@@ -15,7 +15,20 @@
  */
 ?>
         </div>
-        <script src="scriptjs/s_lstmoisDynamique.js"></script>
+        <script type="text/javascript">
+            function QueryToServer(lien, params)
+            {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        console.log(this.responseText);
+                    }
+                };
+                xmlhttp.open("POST", lien , true);
+                xmlhttp.send(params);
+            }
+
+        </script>
     </body>
 </html>
 

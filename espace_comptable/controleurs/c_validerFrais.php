@@ -7,7 +7,6 @@
  */
  $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
 
- 
  switch($action){
      /**
       * Cette option permet le choix du visiteur avec la date du jour
@@ -16,11 +15,6 @@
         $lstVisiteur = $pdo->getListeVisiteur(); 
         $_SESSION['unVisiteur'] = filter_input(INPUT_POST, 'unVisiteur' , FILTER_SANITIZE_STRING);
         $tabDate = $pdo->getLesMoisDisponibles($_SESSION['unVisiteur']);
-        include 'espace_comptable/vues/v_choixVisiteur.php';
-        break;
-
-    case 'choixDate':
-        $lstVisiteur = $pdo->getListeVisiteur(); 
         include 'espace_comptable/vues/v_choixVisiteur.php';
         break;
     
@@ -32,11 +26,12 @@
         $lstVisiteur = $pdo->getListeVisiteur(); 
         $tabDate = $pdo->getLesMoisDisponibles($_SESSION['unVisiteur']);
         include 'espace_comptable/vues/v_choixVisiteur.php';
+        $leVisiteur = $pdo->getUnVisiteur($_SESSION['unVisiteur']);
         //J'utilise la session pour les variables qui vont être réutiliser par la suite
         $_SESSION['unMois'] = filter_input(INPUT_POST, 'unMois' , FILTER_SANITIZE_STRING);
         $lstFraisForfait = $pdo->getLesFraisForfait($_SESSION['unVisiteur'] , $_SESSION['unMois']);
         $lstFraisHorsForfait = $pdo->getLesFraisHorsForfait($_SESSION['unVisiteur'], $_SESSION['unMois']);
-        
+
         include 'espace_comptable/vues/v_corrigerFraisForfait.php';
         include 'espace_comptable/vues/v_corrigerFraisHorsForfait.php';
         include 'espace_comptable/vues/v_validationFicheFrais.php';
@@ -51,7 +46,7 @@
         }
         try{
             $pdo->majFraisForfait($_SESSION['unVisiteur'] , $_SESSION['unMois'] , $lesFrais);
-            redirectTo("validerFrais" , "afficherFrais");
+            redirectTo("validerFrais" , "afficherFrais", 2000);
             ajouterMessage("Vos modifications ont été prises en compte");
             include 'espace_comptable/vues/v_message.php';
         }catch(Exception $e){
@@ -59,10 +54,60 @@
                 include 'vues/v_erreur.php'; 
         }
         break;
+
+
+    case 'corrigerFraisHorsForfait':
+        if(isset($_POST['refuser']))
+        {
+            $pdo->majLibelleFraisHorsForfait($_POST['refuser']);
+            redirectTo("validerFrais" , "afficherFrais");
+        }
+        elseif(isset($_POST['report']))
+        {
+                        /**
+             * Si la fiche de frais du mois suivant est absente
+             * Alors , on créer la fiche de frais du mois suivant et on associe la ligne de frais hors forfait
+             * Sinon on Update la ligne de frais hors forfait en l'associant à la fiche du mois suivant
+             * 
+             */
+            $moisSuivant = dateSuivante($_SESSION['unMois']);
+            $idVisiteur = $_SESSION['unVisiteur'];
+
+            $resultFraisHors = $pdo->getLesFraisHorsForfait($idVisiteur , $_SESSION['unMois']);
+            $libelle = ''; 
+            $date = '';
+            $montant = '';
+
+            foreach($resultFraisHors as $key => $unFrais)
+            {
+                if($unFrais['id'] == $_POST['report'])
+                {
+                    $libelle = $unFrais['libelle'];
+                    $date = $unFrais['date'];
+                    $montant = $unFrais['montant'];
+                    break;
+                }
+            }
+
+            if(empty($pdo->getLesInfosFicheFrais($idVisiteur , $moisSuivant)))
+            {
+                $pdo->creeNouvellesLignesFrais($idVisiteur, $moisSuivant);
+                $pdo->creeNouveauFraisHorsForfait($idVisiteur,$moisSuivant,$libelle,$date,$montant); 
+            }
+            else
+            {    
+                $pdo->creeNouveauFraisHorsForfait($idVisiteur,$moisSuivant,$libelle,$date,$montant); 
+            }
+            //$pdo->supprimerFraisHorsForfait($_POST['report']);
+        }
+        break;
     /**
      * Action permettant la validation de la fiche après vérification
      */
     case 'validationFicheFrais':
+        foreach($tabId as $id){
+            $pdo->supprimerFraisHorsForfait($id);
+        }
         $etat = 'VA';
         try{
             $pdo->majEtatFicheFrais($_SESSION['unVisiteur'] , $_SESSION['unMois'], $etat);
