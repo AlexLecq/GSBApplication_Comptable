@@ -10,9 +10,9 @@
 
 <div id="afficheFicheFrais">
     <div style = "width: 50%">
-        <form action="index.php?uc=suiviPaiement&action=corrigerFraisForfait" method="post" role="form">
+        <form action="index.php?uc=suiviPaiement&action=miseEnPaiement" method="post" role="form">
             <div class="form-group">
-            <h3>Fiche de <strong><?php echo $leVisiteur[0]["nom"].' '.$leVisiteur[0]["prenom"] ?></strong></h3>
+            <h3>Fiche de <strong><?php echo $leVisiteur[0]["nom"].' '.$leVisiteur[0]["prenom"]; ?></strong></h3>
             <h2>Frais Forfaitisés</h2>
             <?php 
                       foreach($resultForfait as $unFrais){
@@ -42,7 +42,14 @@
                       
             ?>
         </div>
-            <button class="btn btn-success" type="submit">Mise en Paiement</button>
+            <div class="row">
+                <div class="col-md-4">
+                    <button name="misePaiement" class="btn btn-success" type="submit">Mise en Paiement</button>    
+                </div>
+                <div class="col-md-4">
+                    <button name="remboursement" class="btn btn-primary" type="submit">Fiche Payé (Demande remboursement)</button>    
+                </div>
+            </div> 
         </form>
     </div>
 </div>

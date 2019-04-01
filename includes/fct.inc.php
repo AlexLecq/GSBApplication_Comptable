@@ -294,13 +294,13 @@ function ajouterMessage($msg)
 function redirectTo($uc = null, $action = null , $time = 0){
     if(empty($uc) && empty($action))
     {
-        echo "<script type='text/javascript'> setTimeout(function () { window.location.href = 'http://localhost/index.php?'; }, ".$time.");</script>";
+        echo "<script type='text/javascript'> setTimeout(function () { window.location.href = 'http://alexandreleclercq.fr/gsb/index.php?'; }, ".$time.");</script>";
     }else if(!empty($uc) && !empty($action))
     {
-        echo "<script type='text/javascript'> setTimeout(function () { window.location.href = 'http://localhost/index.php?uc=".$uc."&action=".$action."' ;}, ".$time.");</script>";
+        echo "<script type='text/javascript'> setTimeout(function () { window.location.href = 'http://alexandreleclercq.fr/gsb/index.php?uc=".$uc."&action=".$action."' ;}, ".$time.");</script>";
     }else if(!empty($uc)) 
     {
-        echo "<script type='text/javascript'> setTimeout(function () { window.location.href = 'http://localhost/index.php?uc=".$uc."'; }, ".$time.");</script>";
+        echo "<script type='text/javascript'> setTimeout(function () { window.location.href = 'http://alexandreleclercq.fr/gsb/index.php?uc=".$uc."'; }, ".$time.");</script>";
     }
     
 }

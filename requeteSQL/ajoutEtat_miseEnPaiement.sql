@@ -1,0 +1,1 @@
+INSERT INTO etat VALUES('MP' , 'Mise en Paiement')

@@ -14,6 +14,7 @@
         
             <form action="index.php?uc=suiviPaiement&action=afficheFraisValide" method="post" role="form">
                 <div class="col-md-4">
+                    <?php  if(!empty($_SESSION["listFiches"])){   ?>
                     <select class="form-control" name="uneFicheValide" id="lstFicheValide">
 
                     <?php
@@ -26,6 +27,12 @@
                         }
                     ?>
                     </select>
+                    <?php }
+                          else
+                          {
+                            echo "<h3> Pas de fiche de frais à valider </h3>";
+                          }
+                     ?>
                 </div>    
                 <div class="col-md-4">
                     <button class="btn btn-success" type="submit">Valider</button>

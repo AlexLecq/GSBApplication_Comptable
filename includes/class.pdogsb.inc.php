@@ -38,10 +38,10 @@
 
 class PdoGsb
 {
-    private static $serveur = 'mysql:host=localhost';
-    private static $bdd = 'dbname=gsb_frais';
-    private static $user = 'userGsb';
-    private static $mdp = 'secret';
+    private static $serveur = 'mysql:host=alexandrddpanda.mysql.db';
+    private static $bdd = 'dbname=alexandrddpanda';
+    private static $user = 'alexandrddpanda';
+    private static $mdp = 'Pq9ukurg';
     private static $monPdo;
     private static $monPdoGsb = null;
 
@@ -494,11 +494,11 @@ class PdoGsb
     public function getFicheValide()
     {
         $requetePrepare = PdoGSB::$monPdo->prepare(
-           'SELECT visiteur.nom, visiteur.prenom ,fichefrais.idvisiteur ,fichefrais.mois ,fichefrais.idetat as idEtat, fichefrais.datemodif as dateModif, fichefrais.nbjustificatifs as nbJustificatifs, fichefrais.montantvalide as montantValide, etat.libelle as libEtat '
+           'SELECT visiteur.nom, etat.libelle , visiteur.prenom ,fichefrais.idvisiteur ,fichefrais.mois ,fichefrais.idetat as idEtat, fichefrais.datemodif as dateModif, fichefrais.nbjustificatifs as nbJustificatifs, fichefrais.montantvalide as montantValide, etat.libelle as libEtat '
             .'FROM fichefrais '
             .'INNER JOIN visiteur ON fichefrais.idvisiteur = visiteur.id '
             .'INNER JOIN etat ON fichefrais.idetat = etat.id '
-            .'WHERE fichefrais.idetat = "VA" ' );
+            .'WHERE fichefrais.idetat = "VA" OR fichefrais.idetat = "MP" ' );
         $requetePrepare->execute();
         $result = $requetePrepare->fetchAll();
         $listFiche = array();
@@ -553,8 +553,8 @@ class PdoGsb
      */
     public function majEtatFicheFrais($idVisiteur, $mois, $etat)
     {
-        $requetePrepare = PdoGSB::$monPdo->prepare(
-            'UPDATE ficheFrais '
+        $requetePrepare = self::$monPdo->prepare(
+            'UPDATE fichefrais '
             . 'SET idetat = :unEtat, datemodif = now() '
             . 'WHERE fichefrais.idvisiteur = :unIdVisiteur '
             . 'AND fichefrais.mois = :unMois'
@@ -597,7 +597,7 @@ class PdoGsb
     public function getUnVisiteur($idVisiteur)
     {
         $query = self::$monPdo->prepare(
-            'SELECT visiteur.nom , visiteur.prenom '
+            'SELECT visiteur.nom , visiteur.prenom ,visiteur.id '
             .'FROM visiteur '
             .'WHERE visiteur.id = :idVisiteur '
         );

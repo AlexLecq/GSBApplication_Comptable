@@ -105,18 +105,13 @@
      * Action permettant la validation de la fiche après vérification
      */
     case 'validationFicheFrais':
-        foreach($tabId as $id){
-            $pdo->supprimerFraisHorsForfait($id);
-        }
-        $etat = 'VA';
         try{
-            $pdo->majEtatFicheFrais($_SESSION['unVisiteur'] , $_SESSION['unMois'], $etat);
+            $pdo->majEtatFicheFrais($_SESSION['unVisiteur'] , $_SESSION['unMois'], 'VA');
+            redirectTo("validerFrais","afficherFrais");
         }catch(Exception $e){
             ajouterErreur($e->getMessage());
             include 'vues/v_erreurs.php';
         }
-        
-
         break;
  }
  ?>
