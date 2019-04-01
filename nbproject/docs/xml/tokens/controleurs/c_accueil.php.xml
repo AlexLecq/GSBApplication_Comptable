@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="../controleurs" file="c_accueil.php" realpath="/Users/petitpanda/Desktop/PPE_projet/MISSION1_PHP/AppliGsb_comptable/controleurs/c_accueil.php" size="451" time="2019-04-01T18:20:43+00:00" unixtime="1554142843" sha1="4f13c8e90d403aa639d8421cc7a43e85b7518db6" relative="controleurs/c_accueil.php"/>
+  <line no="1">
+    <token name="T_OPEN_TAG">&lt;?php</token>
+  </line>
+  <line no="2">
+    <token name="T_DOC_COMMENT">/**</token>
+  </line>
+  <line no="3">
+    <token name="T_DOC_COMMENT"> * Gestion de l'accueil</token>
+  </line>
+  <line no="4">
+    <token name="T_DOC_COMMENT"> *</token>
+  </line>
+  <line no="5">
+    <token name="T_DOC_COMMENT"> * PHP Version 7</token>
+  </line>
+  <line no="6">
+    <token name="T_DOC_COMMENT"> *</token>
+  </line>
+  <line no="7">
+    <token name="T_DOC_COMMENT"> * @category  PPE</token>
+  </line>
+  <line no="8">
+    <token name="T_DOC_COMMENT"> * @package   GSB</token>
+  </line>
+  <line no="9">
+    <token name="T_DOC_COMMENT"> * @author    R&#xE9;seau CERTA &lt;contact@reseaucerta.org&gt;</token>
+  </line>
+  <line no="10">
+    <token name="T_DOC_COMMENT"> * @author    Jos&#xE9; GIL &lt;jgil@ac-nice.fr&gt;</token>
+  </line>
+  <line no="11">
+    <token name="T_DOC_COMMENT"> * @copyright 2017 R&#xE9;seau CERTA</token>
+  </line>
+  <line no="12">
+    <token name="T_DOC_COMMENT"> * @license   R&#xE9;seau CERTA</token>
+  </line>
+  <line no="13">
+    <token name="T_DOC_COMMENT"> * @version   GIT: &lt;0&gt;</token>
+  </line>
+  <line no="14">
+    <token name="T_DOC_COMMENT"> * @link      http://www.reseaucerta.org Contexte &#xAB; Laboratoire GSB &#xBB;</token>
+  </line>
+  <line no="15">
+    <token name="T_DOC_COMMENT"> */</token>
+  </line>
+  <line no="16"/>
+  <line no="17">
+    <token name="T_IF">if</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$estConnecte</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="18">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_INCLUDE">include</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'vues/v_accueil.php'</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="19">
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_ELSE">else</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="20">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_INCLUDE">include</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'vues/v_connexion.php'</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="21">
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="22"/>
+</source>

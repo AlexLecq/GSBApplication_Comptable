@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="../espace_comptable/vues" file="v_accueilComptable.php" realpath="/Users/petitpanda/Desktop/PPE_projet/MISSION1_PHP/AppliGsb_comptable/espace_comptable/vues/v_accueilComptable.php" size="1622" time="2019-04-01T18:20:43+00:00" unixtime="1554142843" sha1="e8b34417ea020a688b0afac144256408a7b71958" relative="espace_comptable/vues/v_accueilComptable.php"/>
+  <line no="1">
+    <token name="T_OPEN_TAG">&lt;?php</token>
+  </line>
+  <line no="2">
+    <token name="T_DOC_COMMENT">/**</token>
+  </line>
+  <line no="3">
+    <token name="T_DOC_COMMENT"> * Vue Accueil Comptable</token>
+  </line>
+  <line no="4">
+    <token name="T_DOC_COMMENT"> *</token>
+  </line>
+  <line no="5">
+    <token name="T_DOC_COMMENT"> * PHP Version 7</token>
+  </line>
+  <line no="6">
+    <token name="T_DOC_COMMENT"> *</token>
+  </line>
+  <line no="7">
+    <token name="T_DOC_COMMENT"> * @category  PPE</token>
+  </line>
+  <line no="8">
+    <token name="T_DOC_COMMENT"> * @package   GSB</token>
+  </line>
+  <line no="9">
+    <token name="T_DOC_COMMENT"> * @author    Alexandre Leclercq</token>
+  </line>
+  <line no="10">
+    <token name="T_DOC_COMMENT"> * @copyright 2017 R&#xE9;seau CERTA</token>
+  </line>
+  <line no="11">
+    <token name="T_DOC_COMMENT"> * @license   R&#xE9;seau CERTA</token>
+  </line>
+  <line no="12">
+    <token name="T_DOC_COMMENT"> * @version   GIT: &lt;0&gt;</token>
+  </line>
+  <line no="13">
+    <token name="T_DOC_COMMENT"> * @link      http://www.reseaucerta.org Contexte &#xAB; Laboratoire GSB &#xBB;</token>
+  </line>
+  <line no="14">
+    <token name="T_DOC_COMMENT"> */</token>
+  </line>
+  <line no="15">
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="16">
+    <token name="T_INLINE_HTML">&lt;div id="accueilComptable"&gt;</token>
+  </line>
+  <line no="17">
+    <token name="T_INLINE_HTML">    &lt;h2&gt;</token>
+  </line>
+  <line no="18">
+    <token name="T_INLINE_HTML">        Gestion des frais&lt;small&gt; - Comptable : </token>
+  </line>
+  <line no="19">
+    <token name="T_INLINE_HTML">            </token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+  </line>
+  <line no="20">
+    <token name="T_WHITESPACE">            </token>
+    <token name="T_ECHO">echo</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$_SESSION</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'prenom'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">' '</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$_SESSION</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'nom'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+  </line>
+  <line no="21">
+    <token name="T_WHITESPACE">            </token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+    <token name="T_INLINE_HTML">&lt;/small&gt;</token>
+  </line>
+  <line no="22">
+    <token name="T_INLINE_HTML">    &lt;/h2&gt;</token>
+  </line>
+  <line no="23">
+    <token name="T_INLINE_HTML">&lt;/div&gt;</token>
+  </line>
+  <line no="24">
+    <token name="T_INLINE_HTML">&lt;div class="row"&gt;</token>
+  </line>
+  <line no="25">
+    <token name="T_INLINE_HTML">    &lt;div class="col-md-12"&gt;</token>
+  </line>
+  <line no="26">
+    <token name="T_INLINE_HTML">        &lt;div class="panel panel-orange"&gt;</token>
+  </line>
+  <line no="27">
+    <token name="T_INLINE_HTML">            &lt;div class="panel-heading"&gt;</token>
+  </line>
+  <line no="28">
+    <token name="T_INLINE_HTML">                &lt;h3 class="panel-title"&gt;</token>
+  </line>
+  <line no="29">
+    <token name="T_INLINE_HTML">                    &lt;span class="glyphicon glyphicon-bookmark"&gt;&lt;/span&gt;</token>
+  </line>
+  <line no="30">
+    <token name="T_INLINE_HTML">                    Navigation</token>
+  </line>
+  <line no="31">
+    <token name="T_INLINE_HTML">                &lt;/h3&gt;</token>
+  </line>
+  <line no="32">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="33">
+    <token name="T_INLINE_HTML">            &lt;div class="panel-body"&gt;</token>
+  </line>
+  <line no="34">
+    <token name="T_INLINE_HTML">                &lt;div class="row"&gt;</token>
+  </line>
+  <line no="35">
+    <token name="T_INLINE_HTML">                    &lt;div class="col-xs-12 col-md-12"&gt;</token>
+  </line>
+  <line no="36">
+    <token name="T_INLINE_HTML">                        &lt;a href="index.php?uc=validerFrais&amp;action=choixVisiteur"</token>
+  </line>
+  <line no="37">
+    <token name="T_INLINE_HTML">                           class="btn btn-success btn-lg" role="button"&gt;</token>
+  </line>
+  <line no="38">
+    <token name="T_INLINE_HTML">                            &lt;span class="glyphicon glyphicon-pencil"&gt;&lt;/span&gt;</token>
+  </line>
+  <line no="39">
+    <token name="T_INLINE_HTML">                            &lt;br&gt;Valider une fiche de frais&lt;/a&gt;</token>
+  </line>
+  <line no="40">
+    <token name="T_INLINE_HTML">                        &lt;a href="index.php?uc=suiviPaiment&amp;action="</token>
+  </line>
+  <line no="41">
+    <token name="T_INLINE_HTML">                           class="btn btn-primary btn-lg" role="button"&gt;</token>
+  </line>
+  <line no="42">
+    <token name="T_INLINE_HTML">                            &lt;span class="glyphicon glyphicon-list-alt"&gt;&lt;/span&gt;</token>
+  </line>
+  <line no="43">
+    <token name="T_INLINE_HTML">                            &lt;br&gt;Suivi des paiments des fiches de frais&lt;/a&gt;</token>
+  </line>
+  <line no="44">
+    <token name="T_INLINE_HTML">                    &lt;/div&gt;</token>
+  </line>
+  <line no="45">
+    <token name="T_INLINE_HTML">                &lt;/div&gt;</token>
+  </line>
+  <line no="46">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="47">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="48">
+    <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
+  </line>
+  <line no="49">
+    <token name="T_INLINE_HTML">&lt;/div&gt;</token>
+  </line>
+</source>

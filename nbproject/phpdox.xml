@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <phpdox xmlns="http://xml.phpdox.net/config">
-  <project name="AppliGsb_Comptable" source=".." workdir="${basedir}/build/api/xml">
+  <project name="AppliGsb_Comptable" source=".." workdir="${basedir}/docs/xml">
+    
     <collector backend="parser" />
-    <generator output="${basedir}/build/api">
+    <generator output="${basedir}/docs">
+      <enrich base="${basedir}/docs">
+        <source type="phploc">
+        </source>
+      </enrich>
       <build engine="html" output="html"/>
     </generator>
   </project>

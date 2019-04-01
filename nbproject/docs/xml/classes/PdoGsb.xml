@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PdoGsb" namespace="" name="PdoGsb" abstract="false" final="false" start="39" end="611">
+  <file path="../includes" file="class.pdogsb.inc.php" realpath="/Users/petitpanda/Desktop/PPE_projet/MISSION1_PHP/AppliGsb_comptable/includes/class.pdogsb.inc.php" size="21952" time="2019-04-01T18:20:42+00:00" unixtime="1554142842" sha1="afbbb9ad4fe3a8f8e0379a39a3a183d0e3184e2d" relative="includes/class.pdogsb.inc.php"/>
+  <docblock>
+    <description compact="Classe d'accès aux données.">Utilise les services de la classe PDO
+pour l'application GSB
+Les attributs sont tous statiques,
+les 4 premiers pour la connexion
+$monPdo de type PDO
+$monPdoGsb qui contiendra l'unique instance de la classe
+
+PHP Version 7</description>
+    <category value="PPE"/>
+    <package value="GSB"/>
+    <author value="Cheri Bibi - Réseau CERTA &lt;contact@reseaucerta.org&gt;"/>
+    <author value="José GIL &lt;jgil@ac-nice.fr&gt;"/>
+    <copyright value="2017 Réseau CERTA"/>
+    <license name="Réseau CERTA"/>
+    <version value="Release: 1.0"/>
+    <link value="http://www.php.net/manual/fr/book.pdo.php PHP Data Objects sur php.net"/>
+  </docblock>
+  <member name="serveur" default="'mysql:host=alexandrddpanda.mysql.db'" type="string" visibility="private" static="true" line="41"/>
+  <member name="bdd" default="'dbname=alexandrddpanda'" type="string" visibility="private" static="true" line="42"/>
+  <member name="user" default="'alexandrddpanda'" type="string" visibility="private" static="true" line="43"/>
+  <member name="mdp" default="'Pq9ukurg'" type="string" visibility="private" static="true" line="44"/>
+  <member name="monPdo" visibility="private" static="true" line="45"/>
+  <member name="monPdoGsb" default="NULL" visibility="private" static="true" line="46"/>
+  <constructor name="__construct" start="52" end="60" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Constructeur privé, crée l'instance de PDO qui sera sollicitée pour toutes les méthodes de la classe"/>
+    </docblock>
+  </constructor>
+  <destructor name="__destruct" start="66" end="69" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Méthode destructeur appelée dès qu'il n'y a plus de référence sur un objet donné, ou dans n'importe quel ordre pendant la séquence d'arrêt."/>
+    </docblock>
+  </destructor>
+  <method name="getPdoGsb" start="77" end="83" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Fonction statique qui crée l'unique instance de la classe Appel : $instancePdoGsb = PdoGsb::getPdoGsb();"/>
+      <return description="objet de la classe PdoGsb" type="object">
+        <type full="l'unique" namespace="" name="l'unique"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getInfosVisiteur" start="93" end="105" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retourne les informations d'un visiteur"/>
+      <param description="Login du visiteur" type="object" variable="$login">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <param description="Mot de passe du visiteur" type="object" variable="$mdp">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <return description="le nom et le prénom sous la forme d'un tableau associatif" type="object">
+        <type full="l'id" namespace="" name="l'id"/>
+      </return>
+    </docblock>
+    <parameter name="login" byreference="false" type="{unknown}"/>
+    <parameter name="mdp" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getInfosComptable" start="116" end="128" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="(myself) Retourne les informations d'un comptable"/>
+      <param description="Login du comptable" type="object" variable="$login">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <param description="Mot de passe du comptable" type="object" variable="$mdp">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <return description="le nom et le prénom sous la forme d'un tableau associatif" type="object">
+        <type full="l'id" namespace="" name="l'id"/>
+      </return>
+    </docblock>
+    <parameter name="login" byreference="false" type="{unknown}"/>
+    <parameter name="mdp" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getLesFraisHorsForfait" start="143" end="159" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retourne sous forme d'un tableau associatif toutes les lignes de frais hors forfait concernées par les deux arguments.">La boucle foreach ne peut être utilisée ici car on procède
+à une modification de la structure itérée - transformation du champ date-</description>
+      <param description="ID du visiteur" type="object" variable="$idVisiteur">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <param description="Mois sous la forme aaaamm" type="object" variable="$mois">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <return description="les champs des lignes de frais hors forfait sous la forme" type="object">d'un tableau associatif<type full="tous" namespace="" name="tous"/></return>
+    </docblock>
+    <parameter name="idVisiteur" byreference="false" type="{unknown}"/>
+    <parameter name="mois" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getNbjustificatifs" start="169" end="181" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retourne le nombre de justificatif d'un visiteur pour un mois donné"/>
+      <param description="ID du visiteur" type="object" variable="$idVisiteur">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <param description="Mois sous la forme aaaamm" type="object" variable="$mois">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <return description="nombre entier de justificatifs" type="object">
+        <type full="le" namespace="" name="le"/>
+      </return>
+    </docblock>
+    <parameter name="idVisiteur" byreference="false" type="{unknown}"/>
+    <parameter name="mois" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getLesFraisForfait" start="193" end="210" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retourne sous forme d'un tableau associatif toutes les lignes de frais au forfait concernées par les deux arguments"/>
+      <param description="ID du visiteur" type="object" variable="$idVisiteur">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <param description="Mois sous la forme aaaamm" type="object" variable="$mois">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <return description="le libelle et la quantité sous la forme d'un tableau" type="object">associatif<type full="l'id" namespace="" name="l'id"/></return>
+    </docblock>
+    <parameter name="idVisiteur" byreference="false" type="{unknown}"/>
+    <parameter name="mois" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getLesIdFrais" start="217" end="225" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retourne tous les id de la table FraisForfait"/>
+      <return description="tableau associatif" type="object">
+        <type full="un" namespace="" name="un"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="majFraisForfait" start="239" end="257" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Met à jour la table ligneFraisForfait Met à jour la table ligneFraisForfait pour un visiteur et un mois donné en enregistrant les nouveaux montants"/>
+      <param description="ID du visiteur" type="object" variable="$idVisiteur">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <param description="Mois sous la forme aaaamm" type="object" variable="$mois">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <param description="tableau associatif de clé idFrais et" type="object" variable="$lesFrais">de valeur la quantité pour ce frais<type full="Array" namespace="" name="Array"/></param>
+      <return type="null"/>
+    </docblock>
+    <parameter name="idVisiteur" byreference="false" type="{unknown}"/>
+    <parameter name="mois" byreference="false" type="{unknown}"/>
+    <parameter name="lesFrais" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="majLibelleFraisHorsForfait" start="264" end="286" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Permet de mettre à jour le libellé d'un frais hors forfait en ajoutant &quot;REFUSER : &quot;"/>
+      <param description="id de la ligne de frais hors forfait à modifier" type="object">
+        <type full="idFrais" namespace="" name="idFrais"/>
+      </param>
+    </docblock>
+    <parameter name="idFrais" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="majNbJustificatifs" start="298" end="314" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Met à jour le nombre de justificatifs de la table ficheFrais pour le mois et le visiteur concerné"/>
+      <param description="ID du visiteur" type="object" variable="$idVisiteur">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <param description="Mois sous la forme aaaamm" type="object" variable="$mois">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <param description="Nombre de justificatifs" type="object" variable="$nbJustificatifs">
+        <type full="Integer" namespace="" name="Integer"/>
+      </param>
+      <return type="null"/>
+    </docblock>
+    <parameter name="idVisiteur" byreference="false" type="{unknown}"/>
+    <parameter name="mois" byreference="false" type="{unknown}"/>
+    <parameter name="nbJustificatifs" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="estPremierFraisMois" start="324" end="339" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Teste si un visiteur possède une fiche de frais pour le mois passé en argument"/>
+      <param description="ID du visiteur" type="object" variable="$idVisiteur">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <param description="Mois sous la forme aaaamm" type="object" variable="$mois">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <return description="ou faux" type="object">
+        <type full="vrai" namespace="" name="vrai"/>
+      </return>
+    </docblock>
+    <parameter name="idVisiteur" byreference="false" type="{unknown}"/>
+    <parameter name="mois" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="dernierMoisSaisi" start="348" end="360" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retourne le dernier mois en cours d'un visiteur"/>
+      <param description="ID du visiteur" type="object" variable="$idVisiteur">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <return description="mois sous la forme aaaamm" type="object">
+        <type full="le" namespace="" name="le"/>
+      </return>
+    </docblock>
+    <parameter name="idVisiteur" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="creeNouvellesLignesFrais" start="375" end="406" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Crée une nouvelle fiche de frais et les lignes de frais au forfait pour un visiteur et un mois donnés">Récupère le dernier mois en cours de traitement, met à 'CL' son champs
+idEtat, crée une nouvelle fiche de frais avec un idEtat à 'CR' et crée
+les lignes de frais forfait de quantités nulles</description>
+      <param description="ID du visiteur" type="object" variable="$idVisiteur">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <param description="Mois sous la forme aaaamm" type="object" variable="$mois">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <return type="null"/>
+    </docblock>
+    <parameter name="idVisiteur" byreference="false" type="{unknown}"/>
+    <parameter name="mois" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="creeNouveauFraisHorsForfait" start="420" end="439" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Crée un nouveau frais hors forfait pour un visiteur un mois donné à partir des informations fournies en paramètre"/>
+      <param description="ID du visiteur" type="object" variable="$idVisiteur">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <param description="Mois sous la forme aaaamm" type="object" variable="$mois">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <param description="Libellé du frais" type="object" variable="$libelle">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <param description="Date du frais au format français jj//mm/aaaa" type="object" variable="$date">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <param description="Montant du frais" type="object" variable="$montant">
+        <type full="Float" namespace="" name="Float"/>
+      </param>
+      <return type="null"/>
+    </docblock>
+    <parameter name="idVisiteur" byreference="false" type="{unknown}"/>
+    <parameter name="mois" byreference="false" type="{unknown}"/>
+    <parameter name="libelle" byreference="false" type="{unknown}"/>
+    <parameter name="date" byreference="false" type="{unknown}"/>
+    <parameter name="montant" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="supprimerFraisHorsForfait" start="448" end="456" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Supprime le frais hors forfait dont l'id est passé en argument"/>
+      <param description="ID du frais" type="object" variable="$idFrais">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <return type="null"/>
+    </docblock>
+    <parameter name="idFrais" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getLesMoisDisponibles" start="466" end="487" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retourne les mois pour lesquel un visiteur a une fiche de frais"/>
+      <param description="ID du visiteur" type="object" variable="$idVisiteur">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <return description="tableau associatif de clé un mois -aaaamm- et de valeurs" type="object">l'année et le mois correspondant<type full="un" namespace="" name="un"/></return>
+    </docblock>
+    <parameter name="idVisiteur" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getFicheValide" start="494" end="512" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retourne toutes les fiches validées"/>
+      <return description="fiches" type="object">
+        <type full="TABLEAU" namespace="" name="TABLEAU"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getLesInfosFicheFrais" start="524" end="542" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retourne les informations d'une fiche de frais d'un visiteur pour un mois donné"/>
+      <param description="ID du visiteur" type="object" variable="$idVisiteur">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <param description="Mois sous la forme aaaamm" type="object" variable="$mois">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <return description="tableau avec des champs de jointure entre une fiche de frais" type="object">et la ligne d'état<type full="un" namespace="" name="un"/></return>
+    </docblock>
+    <parameter name="idVisiteur" byreference="false" type="{unknown}"/>
+    <parameter name="mois" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="majEtatFicheFrais" start="554" end="566" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Modifie l'état et la date de modification d'une fiche de frais.">Modifie le champ idEtat et met la date de modif à aujourd'hui.</description>
+      <param description="ID du visiteur" type="object" variable="$idVisiteur">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <param description="Mois sous la forme aaaamm" type="object" variable="$mois">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <param description="Nouvel état de la fiche de frais" type="object" variable="$etat">
+        <type full="String" namespace="" name="String"/>
+      </param>
+      <return type="null"/>
+    </docblock>
+    <parameter name="idVisiteur" byreference="false" type="{unknown}"/>
+    <parameter name="mois" byreference="false" type="{unknown}"/>
+    <parameter name="etat" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getListeVisiteur" start="574" end="588" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Permet la récupération de la liste des visiteurs pour le comptable"/>
+      <return description="des Visiteurs" type="object">
+        <type full="liste" namespace="" name="liste"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getUnVisiteur" start="597" end="609" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Permet de récupérer les informations d'un visiteur"/>
+      <param description="l'id du visiteur" type="object">
+        <type full="idVisiteur" namespace="" name="idVisiteur"/>
+      </param>
+      <return description="informations du visiteur" type="object">
+        <type full="Result" namespace="" name="Result"/>
+      </return>
+    </docblock>
+    <parameter name="idVisiteur" byreference="false" type="{unknown}"/>
+  </method>
+</class>

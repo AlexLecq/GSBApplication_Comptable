@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="../espace_comptable/vues" file="v_validationFicheFrais.php" realpath="/Users/petitpanda/Desktop/PPE_projet/MISSION1_PHP/AppliGsb_comptable/espace_comptable/vues/v_validationFicheFrais.php" size="440" time="2019-04-01T18:20:42+00:00" unixtime="1554142842" sha1="4fef2eb2776f955192d4bdb793a8ecd65f997ace" relative="espace_comptable/vues/v_validationFicheFrais.php"/>
+  <line no="1">
+    <token name="T_OPEN_TAG">&lt;?php </token>
+  </line>
+  <line no="2"/>
+  <line no="3">
+    <token name="T_DOC_COMMENT">/**</token>
+  </line>
+  <line no="4">
+    <token name="T_DOC_COMMENT"> * Vue : bouton permettant la validation des frais </token>
+  </line>
+  <line no="5">
+    <token name="T_DOC_COMMENT"> * @author Alexandre Leclercq</token>
+  </line>
+  <line no="6">
+    <token name="T_DOC_COMMENT"> * @version 0 GIT &lt;GSBApplication&gt;</token>
+  </line>
+  <line no="7">
+    <token name="T_DOC_COMMENT"> */</token>
+  </line>
+  <line no="8"/>
+  <line no="9">
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="10"/>
+  <line no="11">
+    <token name="T_INLINE_HTML">&lt;div id="corrigerFraisForfait"&gt;</token>
+  </line>
+  <line no="12">
+    <token name="T_INLINE_HTML">        &lt;form action="index.php?uc=validerFrais&amp;action=validationFicheFrais" method="post" role="form"&gt;</token>
+  </line>
+  <line no="13">
+    <token name="T_INLINE_HTML">            &lt;button class="btn btn-success" type="submit"&gt;Valider&lt;/button&gt;</token>
+  </line>
+  <line no="14">
+    <token name="T_INLINE_HTML">            &lt;button class="btn btn-danger" &gt; R&#xE9;initialiser&lt;/button&gt;</token>
+  </line>
+  <line no="15">
+    <token name="T_INLINE_HTML">        &lt;/form&gt;</token>
+  </line>
+  <line no="16">
+    <token name="T_INLINE_HTML">&lt;/div&gt;</token>
+  </line>
+</source>
