@@ -15,15 +15,15 @@
  */
 
     
-    /**
+/**
      * Teste si l'utilisateur est un comptable 
      *
      * @return vrai ou faux
      */
-    function isComptable()
-    {
+function isComptable()
+{
         return isset($_SESSION["isComptable"]);
-    }
+}
 
 /**
  * Teste si un quelconque visiteur est connecté

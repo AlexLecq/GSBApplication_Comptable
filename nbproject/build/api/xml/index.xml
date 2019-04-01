@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<index xmlns="http://xml.phpdox.net/src" basedir="/Users/petitpanda/Desktop/PPE_projet/MISSION1_PHP/AppliGsb_comptable">
+  <namespace name="">
+    <class name="PdoGsb" src="includes/class.pdogsb.inc.php" description="Classe d'accès aux données." xml="classes/PdoGsb.xml"/>
+  </namespace>
+</index>

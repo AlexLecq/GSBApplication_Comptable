@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - PdoGsb</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">PdoGsb</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/includes/class.pdogsb.inc.php.xhtml#line39">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>PdoGsb</h1>
+        <h4>Classe d'accès aux données.</h4>
+        <p>Utilise les services de la classe PDO<br/>pour l'application GSB<br/>Les attributs sont tous statiques,<br/>les 4 premiers pour la connexion<br/>$monPdo de type PDO<br/>$monPdoGsb qui contiendra l'unique instance de la classe<br/><br/>PHP Version 7</p>
+        <ul>
+          <li>Author: Cheri Bibi - Réseau CERTA &lt;contact@reseaucerta.org&gt;</li>
+          <li>Copyright: 2017 Réseau CERTA</li>
+          <li>License: Réseau CERTA</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class PdoGsb
+            {<br/><ul class="none"><li>// members</li><li>private static string <a href="#members">$serveur</a> =
+                        'mysql:host=localhost';
+                    </li><li>private static string <a href="#members">$bdd</a> =
+                        'dbname=gsb_frais';
+                    </li><li>private static string <a href="#members">$user</a> =
+                        'userGsb';
+                    </li><li>private static string <a href="#members">$mdp</a> =
+                        'secret';
+                    </li><li>private static  <a href="#members">$monPdo</a>;
+                    </li><li>private static  <a href="#members">$monPdoGsb</a> =
+                        NULL;
+                    </li></ul><ul class="none"><li>// methods</li><li>private void <a title="PdoGsb" href="../classes/PdoGsb/__construct.xhtml">__construct</a>()
+                    </li><li>public void <a title="PdoGsb" href="../classes/PdoGsb/__destruct.xhtml">__destruct</a>()
+                    </li><li>public static l'unique <a title="PdoGsb" href="../classes/PdoGsb/getPdoGsb.xhtml">getPdoGsb</a>()
+                    </li><li>public l'id <a title="PdoGsb" href="../classes/PdoGsb/getInfosVisiteur.xhtml">getInfosVisiteur</a>()
+                    </li><li>public l'id <a title="PdoGsb" href="../classes/PdoGsb/getInfosComptable.xhtml">getInfosComptable</a>()
+                    </li><li>public tous <a title="PdoGsb" href="../classes/PdoGsb/getLesFraisHorsForfait.xhtml">getLesFraisHorsForfait</a>()
+                    </li><li>public le <a title="PdoGsb" href="../classes/PdoGsb/getNbjustificatifs.xhtml">getNbjustificatifs</a>()
+                    </li><li>public l'id <a title="PdoGsb" href="../classes/PdoGsb/getLesFraisForfait.xhtml">getLesFraisForfait</a>()
+                    </li><li>public un <a title="PdoGsb" href="../classes/PdoGsb/getLesIdFrais.xhtml">getLesIdFrais</a>()
+                    </li><li>public null <a title="PdoGsb" href="../classes/PdoGsb/majFraisForfait.xhtml">majFraisForfait</a>()
+                    </li><li>public void <a title="PdoGsb" href="../classes/PdoGsb/majLibelleFraisHorsForfait.xhtml">majLibelleFraisHorsForfait</a>()
+                    </li><li>public null <a title="PdoGsb" href="../classes/PdoGsb/majNbJustificatifs.xhtml">majNbJustificatifs</a>()
+                    </li><li>public vrai <a title="PdoGsb" href="../classes/PdoGsb/estPremierFraisMois.xhtml">estPremierFraisMois</a>()
+                    </li><li>public le <a title="PdoGsb" href="../classes/PdoGsb/dernierMoisSaisi.xhtml">dernierMoisSaisi</a>()
+                    </li><li>public null <a title="PdoGsb" href="../classes/PdoGsb/creeNouvellesLignesFrais.xhtml">creeNouvellesLignesFrais</a>()
+                    </li><li>public null <a title="PdoGsb" href="../classes/PdoGsb/creeNouveauFraisHorsForfait.xhtml">creeNouveauFraisHorsForfait</a>()
+                    </li><li>public null <a title="PdoGsb" href="../classes/PdoGsb/supprimerFraisHorsForfait.xhtml">supprimerFraisHorsForfait</a>()
+                    </li><li>public un <a title="PdoGsb" href="../classes/PdoGsb/getLesMoisDisponibles.xhtml">getLesMoisDisponibles</a>()
+                    </li><li>public TABLEAU <a title="PdoGsb" href="../classes/PdoGsb/getFicheValide.xhtml">getFicheValide</a>()
+                    </li><li>public un <a title="PdoGsb" href="../classes/PdoGsb/getLesInfosFicheFrais.xhtml">getLesInfosFicheFrais</a>()
+                    </li><li>public null <a title="PdoGsb" href="../classes/PdoGsb/majEtatFicheFrais.xhtml">majEtatFicheFrais</a>()
+                    </li><li>public liste <a title="PdoGsb" href="../classes/PdoGsb/getListeVisiteur.xhtml">getListeVisiteur</a>()
+                    </li><li>public Result <a title="PdoGsb" href="../classes/PdoGsb/getUnVisiteur.xhtml">getUnVisiteur</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="bdd">
+              <strong>$bdd</strong>
+            </li>
+            <li id="mdp">
+              <strong>$mdp</strong>
+            </li>
+            <li id="monPdo">
+              <strong>$monPdo</strong>
+            </li>
+            <li id="monPdoGsb">
+              <strong>$monPdoGsb</strong>
+            </li>
+            <li id="serveur">
+              <strong>$serveur</strong>
+            </li>
+            <li id="user">
+              <strong>$user</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__destruct"><a title="PdoGsb" href="../classes/PdoGsb/__destruct.xhtml">__destruct()</a>
+                — Méthode destructeur appelée dès qu'il n'y a plus de référence sur un objet donné, ou dans n'importe quel ordre pendant la séquence d'arrêt.</li>
+            <li id="creeNouveauFraisHorsForfait"><a title="PdoGsb" href="../classes/PdoGsb/creeNouveauFraisHorsForfait.xhtml">creeNouveauFraisHorsForfait()</a>
+                — Crée un nouveau frais hors forfait pour un visiteur un mois donné à partir des informations fournies en paramètre</li>
+            <li id="creeNouvellesLignesFrais"><a title="PdoGsb" href="../classes/PdoGsb/creeNouvellesLignesFrais.xhtml">creeNouvellesLignesFrais()</a>
+                — Crée une nouvelle fiche de frais et les lignes de frais au forfait pour un visiteur et un mois donnés</li>
+            <li id="dernierMoisSaisi"><a title="PdoGsb" href="../classes/PdoGsb/dernierMoisSaisi.xhtml">dernierMoisSaisi()</a>
+                — Retourne le dernier mois en cours d'un visiteur</li>
+            <li id="estPremierFraisMois"><a title="PdoGsb" href="../classes/PdoGsb/estPremierFraisMois.xhtml">estPremierFraisMois()</a>
+                — Teste si un visiteur possède une fiche de frais pour le mois passé en argument</li>
+            <li id="getFicheValide"><a title="PdoGsb" href="../classes/PdoGsb/getFicheValide.xhtml">getFicheValide()</a>
+                — Retourne toutes les fiches validées</li>
+            <li id="getInfosComptable"><a title="PdoGsb" href="../classes/PdoGsb/getInfosComptable.xhtml">getInfosComptable()</a>
+                — (myself) Retourne les informations d'un comptable</li>
+            <li id="getInfosVisiteur"><a title="PdoGsb" href="../classes/PdoGsb/getInfosVisiteur.xhtml">getInfosVisiteur()</a>
+                — Retourne les informations d'un visiteur</li>
+            <li id="getLesFraisForfait"><a title="PdoGsb" href="../classes/PdoGsb/getLesFraisForfait.xhtml">getLesFraisForfait()</a>
+                — Retourne sous forme d'un tableau associatif toutes les lignes de frais au forfait concernées par les deux arguments</li>
+            <li id="getLesFraisHorsForfait"><a title="PdoGsb" href="../classes/PdoGsb/getLesFraisHorsForfait.xhtml">getLesFraisHorsForfait()</a>
+                — Retourne sous forme d'un tableau associatif toutes les lignes de frais hors forfait concernées par les deux arguments.</li>
+            <li id="getLesIdFrais"><a title="PdoGsb" href="../classes/PdoGsb/getLesIdFrais.xhtml">getLesIdFrais()</a>
+                — Retourne tous les id de la table FraisForfait</li>
+            <li id="getLesInfosFicheFrais"><a title="PdoGsb" href="../classes/PdoGsb/getLesInfosFicheFrais.xhtml">getLesInfosFicheFrais()</a>
+                — Retourne les informations d'une fiche de frais d'un visiteur pour un mois donné</li>
+            <li id="getLesMoisDisponibles"><a title="PdoGsb" href="../classes/PdoGsb/getLesMoisDisponibles.xhtml">getLesMoisDisponibles()</a>
+                — Retourne les mois pour lesquel un visiteur a une fiche de frais</li>
+            <li id="getListeVisiteur"><a title="PdoGsb" href="../classes/PdoGsb/getListeVisiteur.xhtml">getListeVisiteur()</a>
+                — Permet la récupération de la liste des visiteurs pour le comptable</li>
+            <li id="getNbjustificatifs"><a title="PdoGsb" href="../classes/PdoGsb/getNbjustificatifs.xhtml">getNbjustificatifs()</a>
+                — Retourne le nombre de justificatif d'un visiteur pour un mois donné</li>
+            <li id="getPdoGsb"><a title="PdoGsb" href="../classes/PdoGsb/getPdoGsb.xhtml">getPdoGsb()</a>
+                — Fonction statique qui crée l'unique instance de la classe Appel : $instancePdoGsb = PdoGsb::getPdoGsb();</li>
+            <li id="getUnVisiteur"><a title="PdoGsb" href="../classes/PdoGsb/getUnVisiteur.xhtml">getUnVisiteur()</a>
+                — Permet de récupérer les informations d'un visiteur</li>
+            <li id="majEtatFicheFrais"><a title="PdoGsb" href="../classes/PdoGsb/majEtatFicheFrais.xhtml">majEtatFicheFrais()</a>
+                — Modifie l'état et la date de modification d'une fiche de frais.</li>
+            <li id="majFraisForfait"><a title="PdoGsb" href="../classes/PdoGsb/majFraisForfait.xhtml">majFraisForfait()</a>
+                — Met à jour la table ligneFraisForfait Met à jour la table ligneFraisForfait pour un visiteur et un mois donné en enregistrant les nouveaux montants</li>
+            <li id="majLibelleFraisHorsForfait"><a title="PdoGsb" href="../classes/PdoGsb/majLibelleFraisHorsForfait.xhtml">majLibelleFraisHorsForfait()</a>
+                — Permet de mettre à jour le libellé d'un frais hors forfait en ajoutant "REFUSER : "</li>
+            <li id="majNbJustificatifs"><a title="PdoGsb" href="../classes/PdoGsb/majNbJustificatifs.xhtml">majNbJustificatifs()</a>
+                — Met à jour le nombre de justificatifs de la table ficheFrais pour le mois et le visiteur concerné</li>
+            <li id="supprimerFraisHorsForfait"><a title="PdoGsb" href="../classes/PdoGsb/supprimerFraisHorsForfait.xhtml">supprimerFraisHorsForfait()</a>
+                — Supprime le frais hors forfait dont l'id est passé en argument</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.12.0 - Copyright (C) 2010 - 2019 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

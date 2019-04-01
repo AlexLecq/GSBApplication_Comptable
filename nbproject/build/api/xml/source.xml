@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<source xmlns="http://xml.phpdox.net/src">
+  <dir name="/Users/petitpanda/Desktop/PPE_projet/MISSION1_PHP/AppliGsb_comptable">
+    <dir name="vues">
+      <file name="v_listeFraisForfait.php" size="1700" time="2017-08-23T12:54:12+00:00" unixtime="1503492852" sha1="39b68988b07a19f54d0b8cf52410e985d495d5db" xml="tokens/vues/v_listeFraisForfait.php.xml"/>
+      <file name="v_entete.php" size="3646" time="2019-02-16T16:22:19+00:00" unixtime="1550334139" sha1="8a17b08dfa64a865b76e99b14e754237e72638f7" xml="tokens/vues/v_entete.php.xml"/>
+      <file name="v_listeMois.php" size="1946" time="2018-12-05T18:32:23+00:00" unixtime="1544034743" sha1="0b1ef5f27426dbc4943536f4b8b76438a98f29a6" xml="tokens/vues/v_listeMois.php.xml"/>
+      <file name="v_accueil.php" size="1667" time="2017-08-23T12:54:12+00:00" unixtime="1503492852" sha1="08599a700450c24ba7973ea37bec6f6911903401" xml="tokens/vues/v_accueil.php.xml"/>
+      <file name="v_etatFrais.php" size="2367" time="2017-08-23T12:54:12+00:00" unixtime="1503492852" sha1="a1c31abbbef5ff4570c316499abb8231acb44fb1" xml="tokens/vues/v_etatFrais.php.xml"/>
+      <file name="v_pied.php" size="887" time="2019-03-31T16:16:01+00:00" unixtime="1554048961" sha1="191f5bbd8f320241eaeb4de20030963a647fbed3" xml="tokens/vues/v_pied.php.xml"/>
+      <file name="v_listeFraisHorsForfait.php" size="3018" time="2017-08-23T10:15:38+00:00" unixtime="1503483338" sha1="57a577fc5b10712a38594d6369ecb823496e4658" xml="tokens/vues/v_listeFraisHorsForfait.php.xml"/>
+      <file name="v_erreurs.php" size="523" time="2017-08-23T12:54:12+00:00" unixtime="1503492852" sha1="b969d0395b1b2c53d6eddd981b9ae8f73f2808ff" xml="tokens/vues/v_erreurs.php.xml"/>
+      <file name="v_connexion.php" size="2090" time="2017-08-23T09:39:32+00:00" unixtime="1503481172" sha1="f8434af1a364513a75d5c51143654eb3e881c42c" xml="tokens/vues/v_connexion.php.xml"/>
+      <file name="v_deconnexion.php" size="565" time="2019-02-16T16:22:18+00:00" unixtime="1550334138" sha1="ada3327b0fd470f0c289209c54096d0ddc3f2a05" xml="tokens/vues/v_deconnexion.php.xml"/>
+    </dir>
+    <dir name="espace_comptable">
+      <dir name="vues">
+        <file name="v_afficheFicheFrais.php" size="1763" time="2019-03-31T16:16:01+00:00" unixtime="1554048961" sha1="f5d9fc3cc1c79077a3060fa459442d85ea5835a0" xml="tokens/espace_comptable/vues/v_afficheFicheFrais.php.xml"/>
+        <file name="v_accueilComptable.php" size="1622" time="2019-02-16T16:22:18+00:00" unixtime="1550334138" sha1="e8b34417ea020a688b0afac144256408a7b71958" xml="tokens/espace_comptable/vues/v_accueilComptable.php.xml"/>
+        <file name="v_choixFicheValide.php" size="1312" time="2019-03-31T16:16:01+00:00" unixtime="1554048961" sha1="2603615e5722891b54e67ba1cf7228f026c7570e" xml="tokens/espace_comptable/vues/v_choixFicheValide.php.xml"/>
+        <file name="v_message.php" size="523" time="2019-02-16T16:22:18+00:00" unixtime="1550334138" sha1="1ca7edca670f7a4abefe4efb0eae1571d0aa454c" xml="tokens/espace_comptable/vues/v_message.php.xml"/>
+        <file name="v_corrigerFraisForfait.php" size="1408" time="2019-03-31T16:16:01+00:00" unixtime="1554048961" sha1="f74e7ed46ccaddfb49549f515eacd0360e9e29e4" xml="tokens/espace_comptable/vues/v_corrigerFraisForfait.php.xml"/>
+        <file name="v_corrigerFraisHorsForfait.php" size="2129" time="2019-03-31T16:16:01+00:00" unixtime="1554048961" sha1="f758376af65ca09f4f871e90edf87013f0026aa5" xml="tokens/espace_comptable/vues/v_corrigerFraisHorsForfait.php.xml"/>
+        <file name="v_enteteComptable.php" size="3692" time="2019-03-31T16:16:01+00:00" unixtime="1554048961" sha1="bcc06487c1d8e4f272eaf6cff6d57d809d638980" xml="tokens/espace_comptable/vues/v_enteteComptable.php.xml"/>
+        <file name="v_validationFicheFrais.php" size="440" time="2019-02-16T16:22:18+00:00" unixtime="1550334138" sha1="4fef2eb2776f955192d4bdb793a8ecd65f997ace" xml="tokens/espace_comptable/vues/v_validationFicheFrais.php.xml"/>
+        <file name="v_choixVisiteur.php" size="3376" time="2019-03-31T16:16:01+00:00" unixtime="1554048961" sha1="b2146e67ec8688b679d5fd43ccaab92cb86c2544" xml="tokens/espace_comptable/vues/v_choixVisiteur.php.xml"/>
+      </dir>
+      <file name="comptable.php" size="781" time="2019-03-31T16:16:00+00:00" unixtime="1554048960" sha1="5f624a81efef1f1608d520680cd6dd7d033a2a62" xml="tokens/espace_comptable/comptable.php.xml"/>
+      <dir name="controleurs">
+        <file name="c_suiviPaiement.php" size="1110" time="2019-03-31T16:16:00+00:00" unixtime="1554048960" sha1="912f77ca5657d6a9cdea68669ffe2df1c312f0b8" xml="tokens/espace_comptable/controleurs/c_suiviPaiement.php.xml"/>
+        <file name="c_accueilComptable.php" size="225" time="2019-03-31T16:16:00+00:00" unixtime="1554048960" sha1="c6aa1f662f7e5de553a19925493ca0ee41deee69" xml="tokens/espace_comptable/controleurs/c_accueilComptable.php.xml"/>
+        <file name="c_validerFrais.php" size="4785" time="2019-03-31T16:16:00+00:00" unixtime="1554048960" sha1="66316515e07f1a0a13a971d3657c9f0e4ded1a79" xml="tokens/espace_comptable/controleurs/c_validerFrais.php.xml"/>
+      </dir>
+    </dir>
+    <file name="index.php" size="1404" time="2019-03-08T08:38:08+00:00" unixtime="1552034288" sha1="478b18d46f81d8a8f2813e6159f0102842d308b0" xml="tokens/index.php.xml"/>
+    <dir name="tests">
+      <dir name="gendatas">
+        <file name="fonctions.php" size="11288" time="2017-09-26T08:27:56+00:00" unixtime="1506414476" sha1="a4174e0d2405d44a9961a7085236d22b6f52c84d" xml="tokens/tests/gendatas/fonctions.php.xml"/>
+        <file name="majGSB.php" size="938" time="2017-08-23T10:37:08+00:00" unixtime="1503484628" sha1="724bb530614f559323ab766fd4430f72e47b70b9" xml="tokens/tests/gendatas/majGSB.php.xml"/>
+      </dir>
+    </dir>
+    <dir name="includes">
+      <file name="class.pdogsb.inc.php" size="21867" time="2019-03-31T16:16:01+00:00" unixtime="1554048961" sha1="cf0a33c2fb64fd2c2b309676d1702979c38340e6" xml="tokens/includes/class.pdogsb.inc.php.xml"/>
+      <file name="fct.inc.php" size="7657" time="2019-04-01T08:51:35+00:00" unixtime="1554108695" sha1="fe67522a08e481e8abfcf2c2bd0cb117911e9c9f" xml="tokens/includes/fct.inc.php.xml"/>
+    </dir>
+    <dir name="controleurs">
+      <file name="c_gererFrais.php" size="2046" time="2017-09-28T14:04:36+00:00" unixtime="1506607476" sha1="c970e98e564f786fcc883dd58646c6443f53b804" xml="tokens/controleurs/c_gererFrais.php.xml"/>
+      <file name="c_etatFrais.php" size="1689" time="2017-09-28T14:11:30+00:00" unixtime="1506607890" sha1="4ffad8695b4bf2097bb11ce69bb76927489a2261" xml="tokens/controleurs/c_etatFrais.php.xml"/>
+      <file name="c_accueil.php" size="451" time="2017-08-23T09:38:08+00:00" unixtime="1503481088" sha1="4f13c8e90d403aa639d8421cc7a43e85b7518db6" xml="tokens/controleurs/c_accueil.php.xml"/>
+      <file name="c_deconnexion.php" size="877" time="2017-08-23T13:10:14+00:00" unixtime="1503493814" sha1="12cc54ea33cf49ae22b74be2dadf7cfbbd274fe7" xml="tokens/controleurs/c_deconnexion.php.xml"/>
+      <file name="c_connexion.php" size="1715" time="2019-03-31T16:16:00+00:00" unixtime="1554048960" sha1="9a98cffcc7c77f2754bf807c797715cad3d7d6cd" xml="tokens/controleurs/c_connexion.php.xml"/>
+    </dir>
+  </dir>
+</source>
