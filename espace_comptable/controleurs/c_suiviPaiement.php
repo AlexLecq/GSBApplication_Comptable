@@ -26,12 +26,16 @@
         $_SESSION['idVisiteur'] = $idVisiteur;
         $_SESSION['moisFiche'] = $moisFiche;
         $leVisiteur = $pdo->getUnVisiteur($idVisiteur);
+        $infoFicheFrais = $pdo->getLesInfosFicheFrais($idVisiteur, $moisFiche);
         $resultForfait = $pdo->getLesFraisForfait($idVisiteur , $moisFiche);
         $resultHorsForfait = $pdo->getLesFraisHorsForfait($idVisiteur , $moisFiche);
         include 'espace_comptable/vues/v_choixFicheValide.php';
         include 'espace_comptable/vues/v_afficheFicheFrais.php';
         break;
 
+        /**
+         * Action permettant soit la mise en paiement de la fiche, soit le remboursement de la fiche 
+         */
     case 'miseEnPaiement':
         if(isset($_POST["misePaiement"]))
         {

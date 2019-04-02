@@ -13,6 +13,7 @@
         <form action="index.php?uc=suiviPaiement&action=miseEnPaiement" method="post" role="form">
             <div class="form-group">
             <h3>Fiche de <strong><?php echo $leVisiteur[0]["nom"].' '.$leVisiteur[0]["prenom"]; ?></strong></h3>
+            <h3>Etat de la fiche : <strong><?php  echo $infoFicheFrais['libEtat']; ?></strong> </h3>
             <h2>Frais Forfaitisés</h2>
             <?php 
                       foreach($resultForfait as $unFrais){

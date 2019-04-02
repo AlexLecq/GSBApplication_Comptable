@@ -46,7 +46,7 @@
         }
         try{
             $pdo->majFraisForfait($_SESSION['unVisiteur'] , $_SESSION['unMois'] , $lesFrais);
-            redirectTo("validerFrais" , "afficherFrais", 2000);
+            redirectTo('validerFrais' , 'afficherFrais', 2000);
             ajouterMessage("Vos modifications ont été prises en compte");
             include 'espace_comptable/vues/v_message.php';
         }catch(Exception $e){
@@ -56,11 +56,16 @@
         break;
 
 
+        /**
+         * Permet la correction des frais hors forfait
+         */
     case 'corrigerFraisHorsForfait':
         if(isset($_POST['refuser']))
         {
             $pdo->majLibelleFraisHorsForfait($_POST['refuser']);
-            redirectTo("validerFrais" , "afficherFrais");
+            redirectTo("validerFrais" , "afficherFrais", 2000);
+            ajouterMessage("Ce frais hors forfait a été refusé ");
+            include 'espace_comptable/vues/v_message.php';
         }
         elseif(isset($_POST['report']))
         {
@@ -92,13 +97,19 @@
             if(empty($pdo->getLesInfosFicheFrais($idVisiteur , $moisSuivant)))
             {
                 $pdo->creeNouvellesLignesFrais($idVisiteur, $moisSuivant);
-                $pdo->creeNouveauFraisHorsForfait($idVisiteur,$moisSuivant,$libelle,$date,$montant); 
+                $pdo->creeNouveauFraisHorsForfait($idVisiteur,$moisSuivant,$libelle,$date,$montant);
+                redirectTo('validerFrais' , 'afficherFrais' , 3000);
+                ajouterMessage("Une nouvelle fiche de frais vient de se créer pour le mois suivant. \n Vous pourrez y retrouver le frais hors forfait.");
+                include 'espace_comptable/vues/v_message.php';
             }
             else
             {    
                 $pdo->creeNouveauFraisHorsForfait($idVisiteur,$moisSuivant,$libelle,$date,$montant); 
+                redirectTo('validerFrais' , 'afficherFrais' , 3000);
+                ajouterMessage("Votre demande de report s'est déroulé avec succès  \n Vous pourrez y retrouver le frais hors forfait.");
+                include 'espace_comptable/vues/v_message.php';
             }
-            //$pdo->supprimerFraisHorsForfait($_POST['report']);
+            $pdo->supprimerFraisHorsForfait($_POST['report']);
         }
         break;
     /**
@@ -107,14 +118,13 @@
     case 'validationFicheFrais':
         try{
             $pdo->majEtatFicheFrais($_SESSION['unVisiteur'] , $_SESSION['unMois'], 'VA');
-            redirectTo("validerFrais","afficherFrais", 2000);
-            ajouterMessage("La fiche à été correctement validé ! ");
+            redirectTo('validerFrais','afficherFrais', 2000);
+            ajouterMessage("La fiche a été correctement validé ! ");
             include 'espace_comptable/vues/v_message.php';
         }catch(Exception $e){
             ajouterErreur($e->getMessage());
             include 'vues/v_erreurs.php';
         }
-        header('Location: index.php?uc=validerFrais&action=afficherFrais');
         break;
  }
  ?>
