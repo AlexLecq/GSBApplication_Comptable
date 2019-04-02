@@ -6,6 +6,8 @@
  * @version 0 GIT <GSBApplication>
  */
 
+
+ if(!empty($lstFraisForfait)){
 ?>
 
 <div id="corrigerFraisForfait">
@@ -14,3 +16,5 @@
             <button class="btn btn-danger" > Réinitialiser</button>
         </form>
 </div>
+
+ <?php }?>

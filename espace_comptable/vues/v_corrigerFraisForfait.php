@@ -12,7 +12,7 @@
     <h3>Fiche de <strong><?php echo $leVisiteur[0]["nom"].' '.$leVisiteur[0]["prenom"] ?></strong></h3>
 
     <?php if(empty($lstFraisForfait)){
-                echo '<h4 style="color: grey; font-size: 40px">Pas de frais forfait</h4>';
+                echo '<h4 style="color: grey; font-size: 30px">Pas de frais forfait</h4>';
             }else{?>
     <h2>Valider la fiche de frais</h2>
     <div style = "width: 50%">

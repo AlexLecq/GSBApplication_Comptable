@@ -27,16 +27,17 @@
                         }
                     ?>
                     </select>
-                    <?php }
+                    
+                </div>    
+                <div class="col-md-4">
+                    <button class="btn btn-success" type="submit">Valider</button>
+                </div>
+                <?php }
                           else
                           {
                             echo "<h3> Pas de fiche de frais à valider </h3>";
                           }
                      ?>
-                </div>    
-                <div class="col-md-4">
-                    <button class="btn btn-success" type="submit">Valider</button>
-                </div>
             </form>
     </div>
 </div>

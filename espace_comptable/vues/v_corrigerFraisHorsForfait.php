@@ -10,7 +10,7 @@
 
 <div id="corrigerFraisHorsForfait">
     <?php if(empty($lstFraisHorsForfait)){
-                echo '<h4 style="color: grey; font-size: 40px">Pas de frais hors forfait</h4>';
+                echo '<h4 style="color: grey; font-size: 30px">Pas de frais hors forfait</h4>';
             }else{?>
     <div class="panel panel-info">
         

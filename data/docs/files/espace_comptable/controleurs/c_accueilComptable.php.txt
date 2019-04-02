@@ -1,0 +1,16 @@
+<?php
+/**
+ * Gestion de l'accueil
+ *
+ * PHP Version 7
+ *
+ * @category  PPE
+ * @package   GSB
+ */
+
+if ($estConnecte) {
+    include 'espace_comptable/vues/v_accueilComptable.php';
+} else {
+    include 'vues/v_connexion.php';
+}
+

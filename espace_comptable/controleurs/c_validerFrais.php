@@ -107,11 +107,14 @@
     case 'validationFicheFrais':
         try{
             $pdo->majEtatFicheFrais($_SESSION['unVisiteur'] , $_SESSION['unMois'], 'VA');
-            redirectTo("validerFrais","afficherFrais");
+            redirectTo("validerFrais","afficherFrais", 2000);
+            ajouterMessage("La fiche à été correctement validé ! ");
+            include 'espace_comptable/vues/v_message.php';
         }catch(Exception $e){
             ajouterErreur($e->getMessage());
             include 'vues/v_erreurs.php';
         }
+        header('Location: index.php?uc=validerFrais&action=afficherFrais');
         break;
  }
  ?>
